@@ -7,14 +7,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
   private static Scene scene;
 
   @Override
   public void start(Stage stage) throws IOException {
+    isen.db.daos.DataSourceFactory.initializeDatabase();
     scene = new Scene(loadFXML("HomeSreen"), 640, 480);
     stage.setScene(scene);
     stage.show();

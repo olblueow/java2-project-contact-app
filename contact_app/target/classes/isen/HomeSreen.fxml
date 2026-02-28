@@ -18,9 +18,9 @@
          <items>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="408.0" prefWidth="200.0">
                <children>
-                  <TableView prefHeight="300.0" prefWidth="176.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="personsTable" prefHeight="300.0" prefWidth="176.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn prefWidth="200.0" text="User(s)" />
+                      <TableColumn fx:id="personColumn" prefWidth="200.0" text="User(s)" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

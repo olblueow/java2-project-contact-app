@@ -2,6 +2,8 @@ package isen.db.daos;
 
 import javax.sql.DataSource;
 import org.sqlite.SQLiteDataSource;
+import java.sql.Connection;
+import java.sql.Statement;
 
 public class DataSourceFactory {
 
@@ -24,5 +26,26 @@ public class DataSourceFactory {
             dataSource.setUrl("jdbc:sqlite:sqlite.db");
         }
         return dataSource;
+    }
+
+    /**
+     * Initialize the database schema by creating the person table if it doesn't exist.
+     */
+    public static void initializeDatabase() {
+        try (Connection connection = getDataSource().getConnection();
+             Statement statement = connection.createStatement()) {
+            String createTableQuery = "CREATE TABLE IF NOT EXISTS person (" +
+                    "    idperson INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                    "    lastname VARCHAR(45) NOT NULL," +
+                    "    firstname VARCHAR(45) NOT NULL," +
+                    "    nickname VARCHAR(45) NOT NULL," +
+                    "    phone_number VARCHAR(15) NULL," +
+                    "    address VARCHAR(200) NULL," +
+                    "    email_address VARCHAR(150) NULL," +
+                    "    birth_date DATE NULL)";
+            statement.execute(createTableQuery);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to initialize database", e);
+        }
     }
 }
