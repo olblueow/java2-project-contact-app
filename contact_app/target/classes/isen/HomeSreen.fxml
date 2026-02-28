@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isen.HomeSreenController">
+   <children>
+      <SplitPane dividerPositions="0.29946524064171115" layoutX="200.0" prefHeight="400.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="408.0" prefWidth="200.0">
+               <children>
+                  <TableView prefHeight="300.0" prefWidth="176.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn prefWidth="200.0" text="User(s)" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="406.0" prefWidth="406.0">
+               <children>
+                  <AnchorPane prefHeight="398.0" prefWidth="416.0">
+                     <children>
+                        <GridPane layoutX="36.0" layoutY="59.0" prefHeight="234.0" prefWidth="344.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="167.199951171875" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.4000244140625" minWidth="10.0" prefWidth="200.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="lastname" alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="lastname" />
+                              <TextField fx:id="lastnameField" prefHeight="26.0" prefWidth="178.0" GridPane.columnIndex="1" />
+                              <Label alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="firstname" GridPane.rowIndex="1" />
+                              <TextField fx:id="firstnameField" prefHeight="26.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="nickname" GridPane.rowIndex="2" />
+                              <TextField fx:id="nicknameField" prefHeight="26.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="phone number" GridPane.rowIndex="3" />
+                              <TextField fx:id="phone_numberField" prefHeight="26.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="address" GridPane.rowIndex="4" />
+                              <TextField fx:id="addressField" prefHeight="26.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="email address" GridPane.rowIndex="5" />
+                              <TextField fx:id="email_addressField" prefHeight="26.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="birth date" GridPane.rowIndex="6" />
+                              <DatePicker fx:id="birth_dateField" prefHeight="26.0" prefWidth="227.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                           </children>
+                        </GridPane>
+                        <Button layoutX="36.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleNewButton" text="New" />
+                        <Button layoutX="188.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleSaveButton" text="Save" />
+                        <Button layoutX="329.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleDeleteButton" text="Delete" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
